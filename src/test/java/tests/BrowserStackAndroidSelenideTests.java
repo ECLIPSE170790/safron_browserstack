@@ -1,5 +1,6 @@
 package tests;
 
+import config.TestBase;
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.Test;
 

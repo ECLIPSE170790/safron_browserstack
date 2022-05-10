@@ -1,4 +1,4 @@
-package helpers;
+package config.helpers;
 
 import static io.restassured.RestAssured.given;
 
