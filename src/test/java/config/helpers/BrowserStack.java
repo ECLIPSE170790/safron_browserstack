@@ -1,11 +1,13 @@
 package config.helpers;
 
+import config.TestBase;
+
 import static io.restassured.RestAssured.given;
 
-public class BrowserStack {
+public class BrowserStack extends TestBase {
     public static String videoUrl(String sessionId) {
         return given()
-                .auth().basic("ekaterinasafrono_PELdAm", "qnyVs5Vi2xWHsXk2g3v6")
+                .auth().basic(login, key)
                 .when()
                 .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId +".json")
                 .then()

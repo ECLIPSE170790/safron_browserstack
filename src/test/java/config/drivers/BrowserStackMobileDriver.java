@@ -34,9 +34,9 @@ public class BrowserStackMobileDriver extends TestBase implements WebDriverProvi
         desiredCapabilities.setCapability("os_version", "9.0");
 
         // Set other BrowserStack capabilities
-        desiredCapabilities.setCapability("project", "First Java Project");
+        desiredCapabilities.setCapability("project", "Home work by Safronova Y.L.");
         desiredCapabilities.setCapability("build", "Java Android");
-        desiredCapabilities.setCapability("name", "first_test");
+        desiredCapabilities.setCapability("name", "Test for mobile app");
 
         return new AndroidDriver(getBrowserStackUrl(), desiredCapabilities);
     }

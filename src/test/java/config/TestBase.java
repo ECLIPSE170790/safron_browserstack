@@ -25,7 +25,7 @@ public class TestBase {
     @BeforeAll
     public static void setup() {
         addListener("AllureSelenide", new AllureSelenide());
-
+        initVars();
         Configuration.browser = BrowserStackMobileDriver.class.getName();
         Configuration.startMaximized = false;
         Configuration.browserSize = null;
