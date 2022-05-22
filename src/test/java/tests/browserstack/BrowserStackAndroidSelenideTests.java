@@ -1,6 +1,6 @@
 package tests.browserstack;
 
-import config.BrowserStackTestBase;
+import config.testbases.BrowserStackTestBase;
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.Test;
 

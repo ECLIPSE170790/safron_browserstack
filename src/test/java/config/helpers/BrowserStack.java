@@ -1,6 +1,6 @@
 package config.helpers;
 
-import config.BrowserStackTestBase;
+import config.testbases.BrowserStackTestBase;
 
 import static io.restassured.RestAssured.given;
 

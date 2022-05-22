@@ -53,22 +53,22 @@ tasks.withType(Test) {
     }
 }
 
-task browserstack_android(type: Test) {
-    useJUnitPlatform {
-        includeTags 'browserstack_android'
-    }
-    systemProperty "deviceFarm", "browserstack"
-}
-
-task selenoid_android(type: Test) {
-    useJUnitPlatform {
-        includeTags 'selenoid_android'
-    }
-    systemProperty "deviceFarm", "selenoid"
-}
-
-task local_android(type: Test) {
-    useJUnitPlatform {
-        includeTags 'local_android'
-    }
-}
+//task browserstack_android(type: Test) {
+//    useJUnitPlatform {
+//        includeTags 'browserstack_android'
+//    }
+//    systemProperty "deviceFarm", "browserstack"
+//}
+//
+//task selenoid_android(type: Test) {
+//    useJUnitPlatform {
+//        includeTags 'selenoid_android'
+//    }
+//    systemProperty "deviceFarm", "selenoid"
+//}
+//
+//task local_android(type: Test) {
+//    useJUnitPlatform {
+//        includeTags 'local_android'
+//    }
+//}

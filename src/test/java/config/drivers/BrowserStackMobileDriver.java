@@ -4,7 +4,7 @@ import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import config.BrowserStackTestBase;
+import config.testbases.BrowserStackTestBase;
 
 import java.net.MalformedURLException;
 import java.net.URL;

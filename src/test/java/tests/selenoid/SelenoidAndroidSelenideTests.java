@@ -1,13 +1,13 @@
-package tests.local;
+package tests.selenoid;
 
-import config.testbases.LocalTestBase;
+import config.testbases.SelenoidTestBase;
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selenide.*;
 
-public class LocalAndroidSelenideTests extends LocalTestBase {
+public class SelenoidAndroidSelenideTests extends SelenoidTestBase {
 
     @Test
     void searchTest() {

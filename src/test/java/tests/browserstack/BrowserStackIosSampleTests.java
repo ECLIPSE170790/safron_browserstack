@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import config.BrowserStackTestBase;
+import config.testbases.BrowserStackTestBase;
 
 public class BrowserStackIosSampleTests extends BrowserStackTestBase {
 

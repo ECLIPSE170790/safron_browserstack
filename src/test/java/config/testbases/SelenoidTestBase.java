@@ -1,9 +1,9 @@
-package config;
+package config.testbases;
 
 import com.codeborne.selenide.Configuration;
 import config.BrowserStackConfig;
-import config.drivers.BrowserStackMobileDriver;
 import config.drivers.LocalMobileDriver;
+import config.drivers.SelenoidMobileDriver;
 import config.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
@@ -14,9 +14,8 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static config.helpers.Attach.getSessionId;
 
-public class LocalTestBase {
+public class SelenoidTestBase {
 
     public static String
             login = null,
@@ -28,7 +27,7 @@ public class LocalTestBase {
     public static void setup() {
         addListener("AllureSelenide", new AllureSelenide());
         initVars();
-        Configuration.browser = LocalMobileDriver.class.getName();
+        Configuration.browser = SelenoidMobileDriver.class.getName();
         Configuration.startMaximized = false;
         Configuration.browserSize = null;
         Configuration.timeout = 10000;
