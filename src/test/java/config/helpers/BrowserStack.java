@@ -1,10 +1,10 @@
 package config.helpers;
 
-import config.TestBase;
+import config.BrowserStackTestBase;
 
 import static io.restassured.RestAssured.given;
 
-public class BrowserStack extends TestBase {
+public class BrowserStack extends BrowserStackTestBase {
     public static String videoUrl(String sessionId) {
         return given()
                 .auth().basic(login, key)

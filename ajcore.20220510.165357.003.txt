@@ -47,7 +47,7 @@ java.lang.RuntimeException: bad non-abstract method with no code: void org.codeh
 	at io.restassured.RestAssured.<clinit>(RestAssured.java:422)
 	at helpers.BrowserStack.videoUrl(BrowserStack.java:7)
 	at helpers.Attach.attachVideo(Attach.java:34)
-	at config.TestBase.afterEach(TestBase.java:40)
+	at config.BrowserStackTestBase.afterEach(TestBase.java:40)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

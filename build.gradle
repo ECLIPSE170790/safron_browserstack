@@ -52,3 +52,10 @@ tasks.withType(Test) {
         }
     }
 }
+
+task browserstack_android(type: Test) {
+    useJUnitPlatform {
+        includeTags 'selenide_android'
+    }
+    systemProperty "deviceFarm", "browserstack"
+}
