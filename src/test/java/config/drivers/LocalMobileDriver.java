@@ -25,7 +25,8 @@ public class LocalMobileDriver extends BrowserStackTestBase implements WebDriver
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
         desiredCapabilities.setCapability("platformName", "Android");
-        desiredCapabilities.setCapability("deviceName", "pixel_4");
+       // desiredCapabilities.setCapability("deviceName", "pixel_4"); //mobile of Android Studio
+        desiredCapabilities.setCapability("deviceName", "QV7114C01T"); //my mobile
         desiredCapabilities.setCapability("version", "11.0");
         desiredCapabilities.setCapability("locale", "en");
         desiredCapabilities.setCapability("language", "en");
