@@ -1,15 +1,15 @@
-package tests.selenoid;
+package tests.mobilephone;
 
 import org.junit.jupiter.api.Tag;
-import testbases.SelenoidTestBase;
+import testbases.MobileTestBase;
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selenide.*;
 
-@Tag("selenoid")
-public class SelenoidAndroidSelenideTests extends SelenoidTestBase {
+@Tag("mobilephone")
+public class MobilePhoneAndroidSelenideTests extends MobileTestBase {
 
     @Test
     void searchTest() {
@@ -34,5 +34,20 @@ public class SelenoidAndroidSelenideTests extends SelenoidTestBase {
         $(MobileBy.id("org.wikipedia.alpha:id/view_card_header_title")).isDisplayed();
         $(MobileBy.AccessibilityId("In the news")).isDisplayed();
         $(MobileBy.AccessibilityId("Featured article")).isDisplayed();
+    }
+
+    @Test
+    void checkScreens() {
+        $(MobileBy.AccessibilityId("ADD OR EDIT LANGUAGES")).isDisplayed();
+
+        $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        $(MobileBy.AccessibilityId("New ways to explore")).isDisplayed();
+
+
+        $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        $(MobileBy.AccessibilityId("Reading lists with sync")).isDisplayed();
+
+        $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        $(MobileBy.AccessibilityId("Send anonymous data")).isDisplayed();
     }
 }

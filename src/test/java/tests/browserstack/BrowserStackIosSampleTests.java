@@ -7,11 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import testbases.BrowserStackTestBase;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import config.testbases.BrowserStackTestBase;
 
 public class BrowserStackIosSampleTests extends BrowserStackTestBase {
 
@@ -20,11 +19,11 @@ public class BrowserStackIosSampleTests extends BrowserStackTestBase {
         DesiredCapabilities caps = new DesiredCapabilities();
 
         // Set your access credentials
-        caps.setCapability("browserstack.user", login);
-        caps.setCapability("browserstack.key", key);
+//        caps.setCapability("browserstack.user", login);
+//        caps.setCapability("browserstack.key", key);
 
         // Set URL of the application under test
-        caps.setCapability("app", url);
+//        caps.setCapability("app", url);
 
         // Specify device and os_version for testing
         caps.setCapability("device", "iPhone XS");

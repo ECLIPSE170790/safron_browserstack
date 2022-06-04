@@ -1,13 +1,15 @@
 package tests.browserstack;
 
-import config.testbases.BrowserStackTestBase;
+import org.junit.jupiter.api.Tag;
 import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.Test;
+import testbases.BrowserStackTestBase;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
+@Tag("browserstack")
 public class BrowserStackAndroidSelenideTests extends BrowserStackTestBase {
 
     @Test
@@ -31,4 +33,6 @@ public class BrowserStackAndroidSelenideTests extends BrowserStackTestBase {
         $(MobileBy.AccessibilityId("In the news")).isDisplayed();
         $(MobileBy.AccessibilityId("Featured article")).isDisplayed();
     }
+
+
 }

@@ -1,13 +1,15 @@
-package tests.local;
+package tests.emulator;
 
-import config.testbases.LocalTestBase;
 import io.appium.java_client.MobileBy;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import testbases.EmulatorTestBase;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selenide.*;
 
-public class LocalAndroidSelenideTests extends LocalTestBase {
+@Tag("emulator")
+public class EmulatorTests extends EmulatorTestBase {
 
     @Test
     void searchTest() {

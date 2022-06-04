@@ -1,7 +1,8 @@
-package config.drivers;
+package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.testbases.BrowserStackTestBase;
+import config.MobilePhoneConfig;
+import org.aeonbits.owner.ConfigFactory;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -12,11 +13,21 @@ import java.net.URL;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class LocalMobileDriver extends BrowserStackTestBase implements WebDriverProvider {
+public class MobilePhoneDriver implements WebDriverProvider {
+
+    public static MobilePhoneConfig config = ConfigFactory.create(MobilePhoneConfig.class);
+
+    static String url = config.url();
+    static String device = config.device();
+    static String ver = config.ver();
+    static String locale = config.locale();
+    static String language = config.language();
+    static String appPackage = config.appPackage();
+    static String appActivity = config.appActivity();
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL("http://127.0.0.1:4723/wd/hub");
+            return new URL(url);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -26,14 +37,12 @@ public class LocalMobileDriver extends BrowserStackTestBase implements WebDriver
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
         desiredCapabilities.setCapability("platformName", "Android");
        // desiredCapabilities.setCapability("deviceName", "pixel_4"); //mobile of Android Studio
-        desiredCapabilities.setCapability("deviceName", "QV7114C01T"); //my mobile
-        desiredCapabilities.setCapability("version", "11.0");
-        desiredCapabilities.setCapability("locale", "en");
-        desiredCapabilities.setCapability("language", "en");
-        desiredCapabilities.setCapability("appPackage", "org.wikipedia.alpha");
-        desiredCapabilities.setCapability("appActivity", "org.wikipedia.main.MainActivity");
-
-
+        desiredCapabilities.setCapability("deviceName", device); //my mobile
+        desiredCapabilities.setCapability("version", ver);
+        desiredCapabilities.setCapability("locale", locale);
+        desiredCapabilities.setCapability("language", language);
+        desiredCapabilities.setCapability("appPackage", appPackage);
+        desiredCapabilities.setCapability("appActivity", appActivity);
         desiredCapabilities.setCapability("app",
                 getAbsolutePath("src/test/resources/app-alpha-universal-release.apk"));
 

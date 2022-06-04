@@ -1,19 +1,30 @@
-package config.drivers;
+package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import config.BrowserStackConfig;
 import io.appium.java_client.android.AndroidDriver;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import config.testbases.BrowserStackTestBase;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class BrowserStackMobileDriver extends BrowserStackTestBase implements WebDriverProvider {
+public class BrowserStackMobileDriver implements WebDriverProvider {
+
+    public static BrowserStackConfig config = ConfigFactory.create(BrowserStackConfig.class);
+
+    static String url = config.url();
+    static String login = config.login();
+    static String key = config.key();
+    static String app = config.app();
+    static String device = config.device();
+    static String ver = config.ver();
+
 
     public static URL getBrowserStackUrl() {
         try {
-            return new URL("http://hub.browserstack.com/wd/hub");
+            return new URL(url);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -22,18 +33,12 @@ public class BrowserStackMobileDriver extends BrowserStackTestBase implements We
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
-        // Set your access credentials
         desiredCapabilities.setCapability("browserstack.user", login);
         desiredCapabilities.setCapability("browserstack.key", key);
+        desiredCapabilities.setCapability("app", app);
+        desiredCapabilities.setCapability("device", device);
+        desiredCapabilities.setCapability("os_version", ver);
 
-        // Set URL of the application under test
-        desiredCapabilities.setCapability("app", url);
-
-        // Specify device and os_version for testing
-        desiredCapabilities.setCapability("device", "Google Pixel 3");
-        desiredCapabilities.setCapability("os_version", "9.0");
-
-        // Set other BrowserStack capabilities
         desiredCapabilities.setCapability("project", "Home work by Safronova Y.L.");
         desiredCapabilities.setCapability("build", "Java Android");
         desiredCapabilities.setCapability("name", "Test for mobile app");
